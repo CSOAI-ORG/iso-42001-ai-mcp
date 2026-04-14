@@ -1,0 +1,8 @@
+name: iso-42001-ai-mcp
+description: MEOK AI Labs — iso 42001
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/iso-42001-ai-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
