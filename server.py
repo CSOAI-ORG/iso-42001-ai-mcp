@@ -24,29 +24,20 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 
-# Tier authentication (connects to Stripe subscriptions)
+# ── Authentication ──────────────────────────────────────────────
+import sys, os
+sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 try:
-    from auth_middleware import get_tier_from_api_key, Tier, TIER_LIMITS
+    from auth_middleware import check_access, get_tier_from_api_key, Tier, TIER_LIMITS
     AUTH_AVAILABLE = True
 except ImportError:
-    AUTH_AVAILABLE = False  # Runs without auth in dev mode
+    AUTH_AVAILABLE = False
+    def check_access(api_key="", framework=None):
+        return True, "OK", "free"
 
 # ---------------------------------------------------------------------------
 # Rate limiting
 # ---------------------------------------------------------------------------
-
-# ── Authentication ──────────────────────────────────────────────
-import os as _os
-import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
-from auth_middleware import check_access
-_MEOK_API_KEY = _os.environ.get("MEOK_API_KEY", "")
-
-def _check_auth(api_key: str = "") -> str | None:
-    """Check API key if MEOK_API_KEY is set. Returns error or None."""
-    if _MEOK_API_KEY and api_key != _MEOK_API_KEY:
-        return "Invalid API key. Get one at https://meok.ai/api-keys"
-    return None
 
 
 FREE_DAILY_LIMIT = 10
