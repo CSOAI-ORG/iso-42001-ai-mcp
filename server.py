@@ -27,6 +27,18 @@ from mcp.server.fastmcp import FastMCP
 # ---------------------------------------------------------------------------
 # Rate limiting
 # ---------------------------------------------------------------------------
+
+# ── Authentication ──────────────────────────────────────────────
+import os as _os
+_MEOK_API_KEY = _os.environ.get("MEOK_API_KEY", "")
+
+def _check_auth(api_key: str = "") -> str | None:
+    """Check API key if MEOK_API_KEY is set. Returns error or None."""
+    if _MEOK_API_KEY and api_key != _MEOK_API_KEY:
+        return "Invalid API key. Get one at https://meok.ai/api-keys"
+    return None
+
+
 FREE_DAILY_LIMIT = 10
 _usage: dict[str, list[datetime]] = defaultdict(list)
 
