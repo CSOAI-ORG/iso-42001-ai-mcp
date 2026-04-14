@@ -37,6 +37,9 @@ except ImportError:
 
 # ── Authentication ──────────────────────────────────────────────
 import os as _os
+import sys, os
+sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
+from auth_middleware import check_access
 _MEOK_API_KEY = _os.environ.get("MEOK_API_KEY", "")
 
 def _check_auth(api_key: str = "") -> str | None:
@@ -1028,6 +1031,9 @@ def audit_management_system(
     Returns:
         Clause-by-clause audit results with conformity status and recommendations.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1163,6 +1169,9 @@ def assess_ai_risk(
         Complete Annex B risk assessment with identified risks, analysis,
         and evaluation results.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1316,6 +1325,9 @@ def generate_policy_template(
     Returns:
         Markdown-formatted policy template with all required elements.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1606,6 +1618,9 @@ def check_annex_controls(
     Returns:
         Annex A control evaluation with applicability and gap analysis.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1717,6 +1732,9 @@ def crosswalk_to_eu_ai_act(
         Detailed crosswalk between ISO 42001 and EU AI Act with alignment
         strength ratings and dual-compliance guidance.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1854,6 +1872,9 @@ def create_certification_checklist(
     Returns:
         Certification readiness checklist with pass/fail status per item.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
