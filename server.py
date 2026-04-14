@@ -1010,7 +1010,7 @@ def audit_management_system(
     existing_certifications: str = "",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Audit an AI management system against ISO/IEC 42001 clauses 4-10.
 
     Evaluates organizational readiness and conformity across all seven
@@ -1033,7 +1033,7 @@ def audit_management_system(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1149,7 +1149,7 @@ def assess_ai_risk(
     risk_criteria: str = "",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Perform ISO 42001 Annex B risk assessment for AI systems.
 
     Comprehensive AI risk assessment covering risk criteria establishment,
@@ -1171,7 +1171,7 @@ def assess_ai_risk(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1308,7 +1308,7 @@ def generate_policy_template(
     policy_type: str = "comprehensive",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Generate AI policy documents per ISO 42001 requirements.
 
     Creates policy templates that satisfy ISO 42001 clause 5.2 (AI policy)
@@ -1327,7 +1327,7 @@ def generate_policy_template(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1600,7 +1600,7 @@ def check_annex_controls(
     implemented_controls: str = "",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Evaluate AI system against ISO 42001 Annex A controls.
 
     Maps the system to all Annex A control objectives and evaluates
@@ -1620,7 +1620,7 @@ def check_annex_controls(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1712,7 +1712,7 @@ def crosswalk_to_eu_ai_act(
     focus_area: str = "",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Map ISO/IEC 42001 clauses and Annex A controls to EU AI Act articles.
 
     This is the killer feature -- regulation-to-regulation mapping showing
@@ -1734,7 +1734,7 @@ def crosswalk_to_eu_ai_act(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}
@@ -1854,7 +1854,7 @@ def create_certification_checklist(
     target_date: str = "",
     caller: str = "anonymous",
     tier: str = "free",
-) -> dict:
+api_key: str = "") -> dict:
     """Generate ISO 42001 certification readiness checklist with pass/fail.
 
     Creates a comprehensive certification preparation checklist covering
@@ -1874,7 +1874,7 @@ def create_certification_checklist(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     rate_err = _check_rate_limit(caller, tier)
     if rate_err:
         return {"error": rate_err}

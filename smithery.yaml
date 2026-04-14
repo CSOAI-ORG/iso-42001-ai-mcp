@@ -1,8 +1,110 @@
 name: iso-42001-ai-mcp
-description: MEOK AI Labs — iso 42001
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/iso-42001-ai-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: audit_management_system
+  description: Audit an AI management system against ISO/IEC 42001 clauses 4-10.
+  parameters:
+  - name: organization_description
+    type: string
+    required: true
+  - name: ai_systems_description
+    type: string
+    required: false
+  - name: existing_certifications
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: assess_ai_risk
+  description: Perform ISO 42001 Annex B risk assessment for AI systems.
+  parameters:
+  - name: system_description
+    type: string
+    required: true
+  - name: system_name
+    type: string
+    required: false
+  - name: risk_criteria
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: generate_policy_template
+  description: Generate AI policy documents per ISO 42001 requirements.
+  parameters:
+  - name: organization_name
+    type: string
+    required: true
+  - name: ai_scope
+    type: string
+    required: false
+  - name: policy_type
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: check_annex_controls
+  description: Evaluate AI system against ISO 42001 Annex A controls.
+  parameters:
+  - name: system_description
+    type: string
+    required: true
+  - name: system_name
+    type: string
+    required: false
+  - name: implemented_controls
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: crosswalk_to_eu_ai_act
+  description: Map ISO/IEC 42001 clauses and Annex A controls to EU AI Act articles.
+  parameters:
+  - name: iso_clauses
+    type: string
+    required: false
+  - name: focus_area
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: create_certification_checklist
+  description: Generate ISO 42001 certification readiness checklist with pass/fail.
+  parameters:
+  - name: organization_name
+    type: string
+    required: false
+  - name: current_status
+    type: string
+    required: false
+  - name: target_date
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
