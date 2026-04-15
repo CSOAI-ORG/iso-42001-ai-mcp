@@ -1,6 +1,6 @@
 {
   "name": "iso-42001-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \n        ",
+  "description": "AI-powered iso 42001 ai MCP server for agents. Supports audit management system, assess ai risk, generate policy template. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {

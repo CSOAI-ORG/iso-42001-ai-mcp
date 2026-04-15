@@ -1,1 +1,11 @@
-{"name":"iso-42001-ai-mcp","version":"1.0.0","description":"ISO/IEC 42001 AI Management System MCP","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/iso-42001-ai-mcp"}}
+{
+  "name": "iso-42001-ai-mcp",
+  "version": "1.0.0",
+  "description": "AI-powered iso 42001 ai MCP server for agents. Supports audit management system, assess ai risk, generate policy template. By MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/iso-42001-ai-mcp"
+  }
+}
