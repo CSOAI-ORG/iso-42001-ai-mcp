@@ -1,0 +1,61 @@
+{
+  "name": "iso-42001-ai",
+  "description": "ISO/IEC 42001:2023 AI Management System compliance server. Provides management system auditing against clauses 4-10, Annex A control evaluation, Annex B risk assessment, policy template generation, certification readiness checking, and crosswalks to EU AI Act. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/iso-42001-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "audit_management_system",
+      "description": "Audit an AI management system against ISO/IEC 42001 clauses 4-10."
+    },
+    {
+      "name": "assess_ai_risk",
+      "description": "Perform ISO 42001 Annex B risk assessment for AI systems."
+    },
+    {
+      "name": "generate_policy_template",
+      "description": "Generate AI policy documents per ISO 42001 requirements."
+    },
+    {
+      "name": "check_annex_controls",
+      "description": "Evaluate AI system against ISO 42001 Annex A controls."
+    },
+    {
+      "name": "crosswalk_to_eu_ai_act",
+      "description": "Map ISO/IEC 42001 clauses and Annex A controls to EU AI Act articles."
+    },
+    {
+      "name": "create_certification_checklist",
+      "description": "Generate ISO 42001 certification readiness checklist with pass/fail."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Security & Compliance"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
