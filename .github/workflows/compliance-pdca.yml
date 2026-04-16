@@ -5,12 +5,15 @@
 name: MEOK Compliance PDCA Cycle
 
 on:
-
-permissions: {}
   schedule:
     - cron: '0 6 * * *'  # Daily at 6am UTC
   workflow_dispatch:  # Manual trigger
+
+
+
   push:
+
+permissions: {}
     paths:
       - '**/server.py'
 
