@@ -58,6 +58,36 @@ ISO 42001 certification readiness checklist with pass/fail assessment.
 - `organization_description` (str): Organization context
 - `api_key` (str): API key
 
+## Zero-Friction Tools
+
+### `quick_scan`
+One-line system description to instant ISO 42001 gap assessment. **No API key needed.**
+
+```
+quick_scan(description="customer service chatbot using GPT-4")
+```
+
+### `certification_timeline`
+Returns ISO 42001 certification steps and typical timelines. **No parameters needed.**
+
+```
+certification_timeline()
+```
+
+## Claude Desktop Config
+
+```json
+{
+  "mcpServers": {
+    "iso-42001-ai": {
+      "command": "python",
+      "args": ["server.py"],
+      "cwd": "/path/to/iso-42001-ai-mcp"
+    }
+  }
+}
+```
+
 ## Authentication
 
 Free tier: 10 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.

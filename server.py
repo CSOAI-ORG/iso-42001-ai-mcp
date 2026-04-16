@@ -2048,5 +2048,136 @@ def neural_insights(api_key: str = "") -> dict:
 # Entry point
 # ===========================================================================
 
+@mcp.tool()
+def quick_scan(description: str) -> dict:
+    """One-line system description to instant ISO 42001 gap assessment. No API key needed.
+
+    Args:
+        description: Brief description of your AI system (e.g. 'customer service chatbot using GPT-4')
+
+    Returns:
+        Instant gap assessment against ISO/IEC 42001:2023 clauses.
+    """
+    risk_areas = {
+        area: round(_score_text(description, keywords), 3)
+        for area, keywords in RISK_KEYWORDS.items()
+    }
+    overall = round(sum(risk_areas.values()) / max(len(risk_areas), 1), 3)
+    level = _risk_level(overall)
+
+    # Identify top gaps from clauses
+    gaps = []
+    if "policy" not in description.lower() and "governance" not in description.lower():
+        gaps.append({"clause": "5.2", "gap": "AI policy not mentioned", "priority": "high"})
+    if "risk" not in description.lower():
+        gaps.append({"clause": "6.1", "gap": "Risk assessment not mentioned", "priority": "high"})
+    if "monitor" not in description.lower() and "audit" not in description.lower():
+        gaps.append({"clause": "9.1", "gap": "Monitoring/measurement not mentioned", "priority": "medium"})
+    if "training" not in description.lower() and "competence" not in description.lower():
+        gaps.append({"clause": "7.2", "gap": "Competence/training not mentioned", "priority": "medium"})
+    if "document" not in description.lower():
+        gaps.append({"clause": "7.5", "gap": "Documented information not mentioned", "priority": "medium"})
+    if not gaps:
+        gaps.append({"clause": "General", "gap": "Consider detailed assessment for comprehensive coverage", "priority": "low"})
+
+    return {
+        "system": description[:120],
+        "overall_risk_level": level,
+        "overall_risk_score": overall,
+        "risk_areas": {k: {"score": v, "level": _risk_level(v)} for k, v in risk_areas.items() if v > 0},
+        "top_gaps": gaps[:5],
+        "clauses_to_review": ["Clause 4 (Context)", "Clause 5 (Leadership)", "Clause 6 (Planning)",
+                              "Clause 7 (Support)", "Clause 8 (Operation)", "Clause 9 (Evaluation)",
+                              "Clause 10 (Improvement)"],
+        "next_step": "Use audit_management_system() for full clause-by-clause assessment",
+        "powered_by": "MEOK AI Labs | https://meok.ai",
+    }
+
+
+@mcp.tool()
+def certification_timeline() -> dict:
+    """Returns ISO 42001 certification steps and typical timelines. No parameters needed."""
+    return {
+        "framework": "ISO/IEC 42001:2023",
+        "title": "AI Management System Certification Timeline",
+        "phases": [
+            {
+                "phase": 1,
+                "name": "Gap Analysis & Planning",
+                "duration": "2-4 weeks",
+                "activities": [
+                    "Assess current AI governance maturity",
+                    "Identify gaps against ISO 42001 clauses 4-10",
+                    "Define scope of AI management system (AIMS)",
+                    "Establish project plan and resource allocation",
+                ],
+            },
+            {
+                "phase": 2,
+                "name": "AIMS Design & Documentation",
+                "duration": "4-8 weeks",
+                "activities": [
+                    "Develop AI policy (Clause 5.2)",
+                    "Conduct AI risk assessment (Clause 6.1 / Annex B)",
+                    "Define objectives and plans (Clause 6.2)",
+                    "Create Statement of Applicability for Annex A controls",
+                    "Document processes, procedures, and responsibilities",
+                ],
+            },
+            {
+                "phase": 3,
+                "name": "Implementation",
+                "duration": "4-12 weeks",
+                "activities": [
+                    "Implement Annex A controls",
+                    "Train personnel (Clause 7.2/7.3)",
+                    "Deploy monitoring and measurement (Clause 9.1)",
+                    "Conduct internal communications (Clause 7.4)",
+                    "Establish operational controls (Clause 8)",
+                ],
+            },
+            {
+                "phase": 4,
+                "name": "Internal Audit & Management Review",
+                "duration": "2-4 weeks",
+                "activities": [
+                    "Conduct internal audit (Clause 9.2)",
+                    "Perform management review (Clause 9.3)",
+                    "Address nonconformities (Clause 10.2)",
+                    "Implement corrections and improvements",
+                ],
+            },
+            {
+                "phase": 5,
+                "name": "Certification Audit",
+                "duration": "2-4 weeks",
+                "activities": [
+                    "Stage 1 audit: documentation review",
+                    "Stage 2 audit: on-site assessment of AIMS effectiveness",
+                    "Address any audit findings",
+                    "Receive certification decision",
+                ],
+            },
+        ],
+        "total_timeline": "14-32 weeks (typical)",
+        "cost_estimate": "Varies by organization size; typically $15,000-$80,000 USD including consultancy and audit fees",
+        "certification_bodies": [
+            "BSI Group", "Bureau Veritas", "DNV", "SGS", "TUV",
+            "LRQA", "Intertek", "NQA",
+        ],
+        "tips": [
+            "Organizations already ISO 27001 certified can leverage existing ISMS processes",
+            "Start with a gap analysis using quick_scan() or audit_management_system()",
+            "Annex A controls are the most time-intensive part",
+            "Consider integrated audits if pursuing multiple ISO certifications",
+        ],
+        "powered_by": "MEOK AI Labs | https://meok.ai",
+    }
+
+
+def main():
+    mcp.run()
+
+
 if __name__ == "__main__":
     mcp.run()
