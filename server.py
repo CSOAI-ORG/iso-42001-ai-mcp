@@ -29,11 +29,17 @@ import sys, os
 sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 try:
     from auth_middleware import check_access, get_tier_from_api_key, Tier, TIER_LIMITS
+    from compliance_neural import ComplianceNeuralNet
     AUTH_AVAILABLE = True
 except ImportError:
     AUTH_AVAILABLE = False
     def check_access(api_key="", framework=None):
         return True, "OK", "free"
+
+try:
+    _neural_net = ComplianceNeuralNet("iso-42001")
+except Exception:
+    _neural_net = None
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -1993,6 +1999,49 @@ api_key: str = "") -> dict:
         },
         "powered_by": "MEOK AI Labs | https://meok.ai",
     }
+
+
+# ===========================================================================
+# Neural risk prediction
+# ===========================================================================
+
+@mcp.tool()
+def predict_risk_neural(
+    system_name: str,
+    uses_biometric: bool = False,
+    uses_health_data: bool = False,
+    has_human_oversight: bool = True,
+    affected_users: int = 0,
+    sector: str = "",
+    has_documentation: bool = False,
+    prior_incidents: int = 0,
+    api_key: str = "") -> dict:
+    """Neural network-based risk prediction that improves from every compliance check."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg}
+    if _neural_net is None:
+        return {"error": "Neural module not available"}
+    features = _neural_net.extract_features_from_system(
+        system_name=system_name, uses_biometric=uses_biometric,
+        uses_health_data=uses_health_data, has_human_oversight=has_human_oversight,
+        affected_users=affected_users, sector=sector, has_documentation=has_documentation,
+        prior_incidents=prior_incidents,
+    )
+    prediction = _neural_net.predict_risk(features)
+    prediction["system_name"] = system_name
+    return prediction
+
+
+@mcp.tool()
+def neural_insights(api_key: str = "") -> dict:
+    """Get aggregate learning insights from the neural compliance model."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg}
+    if _neural_net is None:
+        return {"error": "Neural module not available"}
+    return _neural_net.get_insights()
 
 
 # ===========================================================================
