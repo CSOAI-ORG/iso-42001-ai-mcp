@@ -1,3 +1,5 @@
+[![iso-42001-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp)
+
 <div align="center">
 
 [![PyPI](https://img.shields.io/pypi/v/iso-42001-ai-mcp)](https://pypi.org/project/iso-42001-ai-mcp/)
