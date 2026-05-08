@@ -1,96 +1,64 @@
-[![iso-42001-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/iso-42001-ai-mcp)](https://pypi.org/project/iso-42001-ai-mcp/)
-
-[![iso-42001-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/iso-42001-ai-mcp)
-
 <div align="center">
 
-[![PyPI](https://img.shields.io/pypi/v/iso-42001-ai-mcp)](https://pypi.org/project/iso-42001-ai-mcp/)
-[![Downloads](https://img.shields.io/pypi/dm/iso-42001-ai-mcp)](https://pypi.org/project/iso-42001-ai-mcp/)
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/iso-42001-ai-mcp)](https://github.com/CSOAI-ORG/iso-42001-ai-mcp/stargazers)
+# Iso 42001 Ai MCP
+
+**MCP server for iso 42001 ai mcp operations**
+
+[![PyPI](https://img.shields.io/pypi/v/meok-iso-42001-ai-mcp)](https://pypi.org/project/meok-iso-42001-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-# ISO 42001 AI MCP
-
-**AI Management System (AIMS) assessment, certification readiness, and EU AI Act crosswalk against ISO/IEC 42001:2023.**
-
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-224+_servers-purple)](https://meok.ai)
-
-[Install](#install) · [Tools](#tools) · [Pricing](#pricing) · [Attestation API](#attestation-api)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
 
-## Why This Exists
-
-ISO 42001:2023 is the world's first certification standard specifically for AI management systems. It defines what an organisation must do to develop, deploy, and maintain AI responsibly. Certification bodies (BSI, TUV, SGS, Bureau Veritas) are now issuing ISO 42001 certificates, and enterprises are requesting it in procurement.
-
-The standard has 39 Annex A controls and 9 management system clauses. Mapping these to your AI lifecycle, crosswalking to EU AI Act conformity assessment, and preparing for a Stage 1/Stage 2 audit typically costs 20-50K in consultancy fees. This MCP performs the full AIMS assessment, risk analysis, policy generation, Annex A control checks, EU AI Act crosswalk, and certification timeline planning from a single prompt.
-
-## Install
-
-```bash
-pip install iso-42001-ai-mcp
-```
+Iso 42001 Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
 
 ## Tools
 
-| Tool | ISO Reference | What it does |
-|------|--------------|--------------|
-| `audit_management_system` | Clauses 4-10 | Full AIMS audit against ISO 42001:2023 management clauses |
-| `assess_ai_risk` | Clause 6.1 | AI-specific risk assessment with impact and likelihood scoring |
-| `generate_policy_template` | Clause 5.2, Annex A | Generate AI policy aligned to management commitment requirements |
-| `check_annex_controls` | Annex A (39 controls) | Control-by-control assessment of all Annex A objectives |
-| `crosswalk_to_eu_ai_act` | Annex A + EU AI Act | Map ISO 42001 controls to EU AI Act conformity requirements |
-| `create_certification_checklist` | Stage 1 / Stage 2 | Certification readiness checklist with timeline |
-| `predict_risk_neural` | ML-assisted | Neural network risk prediction for AI systems |
-| `quick_scan` | All clauses | Rapid AI system compliance overview |
-| `certification_timeline` | Full lifecycle | Stage 1/Stage 2 audit timeline and milestones |
+| Tool | Description |
+|------|-------------|
+| `audit_management_system` | Audit an AI management system against ISO/IEC 42001 clauses 4-10. |
+| `assess_ai_risk` | Perform ISO 42001 Annex B risk assessment for AI systems. |
+| `generate_policy_template` | Generate AI policy documents per ISO 42001 requirements. |
+| `check_annex_controls` | Evaluate AI system against ISO 42001 Annex A controls. |
+| `crosswalk_to_eu_ai_act` | Map ISO/IEC 42001 clauses and Annex A controls to EU AI Act articles. |
+| `create_certification_checklist` | Generate ISO 42001 certification readiness checklist with pass/fail. |
+| `predict_risk_neural` | Neural network-based risk prediction that improves from every compliance check. |
+| `neural_insights` | Get aggregate learning insights from the neural compliance model. |
+| `quick_scan` | One-line system description to instant ISO 42001 gap assessment. No API key need |
+| `certification_timeline` | Returns ISO 42001 certification steps and typical timelines. No parameters neede |
 
-## Example
+## Installation
 
-```
-Prompt: "Assess our computer vision system for ISO 42001 certification
-readiness. It processes facial images for building access control,
-was trained on a proprietary dataset, and has no explainability layer."
-
-Result: AIMS assessment with findings across Annex A controls: biometric
-processing triggers A.6.2.4 (impact assessment), missing explainability
-fails A.6.2.6 (transparency), proprietary dataset needs A.7.3 (data
-management). EU AI Act crosswalk flags Annex III high-risk classification.
-Certification timeline generated with 14-week remediation path.
+```bash
+pip install meok-iso-42001-ai-mcp
 ```
 
-## Pricing
+## Usage with Claude Desktop
 
-| Tier | Price | What you get |
-|------|-------|-------------|
-| **Free** | £0 | 10 calls/day — AIMS audit + quick scan |
-| **Pro** | £199/mo | Unlimited + HMAC-signed attestations + verify URLs |
-| **Enterprise** | £1,499/mo | Multi-tenant + co-branded reports + webhooks |
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-[Subscribe to Pro](https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836) · [Enterprise](https://buy.stripe.com/4gM9AV80kaEG0ZT42k8k837)
-
-## Attestation API
-
-Every Pro/Enterprise audit produces a cryptographically signed certificate:
-
-```
-POST https://meok-attestation-api.vercel.app/sign
-GET  https://meok-attestation-api.vercel.app/verify/{cert_id}
+```json
+{
+  "mcpServers": {
+    "iso-42001-ai-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_iso_42001_ai_mcp.server"]
+    }
+  }
+}
 ```
 
-Zero-dep verifier: `pip install meok-attestation-verify`
+## Usage with FastMCP
 
-## Links
+```python
+from mcp.server.fastmcp import FastMCP
 
-- Website: [meok.ai](https://meok.ai)
-- All MCP servers: [meok.ai/labs/mcp/servers](https://meok.ai/labs/mcp/servers)
-- Enterprise support: nicholas@csoai.org
+# This server exposes 10 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT
-<!-- mcp-name: io.github.CSOAI-ORG/iso-42001-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
