@@ -50,7 +50,7 @@ TIER_ORDER = [Tier.FREE, Tier.PAYG, Tier.STARTER, Tier.PROFESSIONAL, Tier.ENTERP
 # rate is for that tool) from the balance fronted via the council storefront
 # PAYG top-up page. When balance hits zero the tool returns a top-up URL.
 PAYG_PRICE_PER_CALL_GBP = float(os.environ.get("MEOK_PAYG_RATE_GBP", "0.05"))
-PAYG_TOPUP_URL = os.environ.get("MEOK_PAYG_TOPUP_URL", "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K/payg")
+PAYG_TOPUP_URL = os.environ.get("MEOK_PAYG_TOPUP_URL", "https://councilof.ai/payg")
 PAYG_X402_RECEIVER = os.environ.get("MEOK_X402_RECEIVER", "")  # USDC on Base L2 wallet
 PAYG_BALANCE_FILE = os.path.join(os.path.expanduser("~/.meok"), "payg_balance.json")
 
