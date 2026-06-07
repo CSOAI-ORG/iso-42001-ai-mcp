@@ -1,0 +1,113 @@
+{
+  "name": "iso-42001-ai-mcp",
+  "description": "Iso 42001 Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/iso-42001-ai-mcp.html",
+  "version": "1.1.4",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "audit_management_system",
+      "name": "Audit Management System",
+      "description": "audit_management_system via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "assess_ai_risk",
+      "name": "Assess Ai Risk",
+      "description": "assess_ai_risk via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_policy_template",
+      "name": "Generate Policy Template",
+      "description": "generate_policy_template via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_annex_controls",
+      "name": "Check Annex Controls",
+      "description": "check_annex_controls via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "crosswalk_to_eu_ai_act",
+      "name": "Crosswalk To Eu Ai Act",
+      "description": "crosswalk_to_eu_ai_act via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_certification_checklist",
+      "name": "Create Certification Checklist",
+      "description": "create_certification_checklist via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "predict_risk_neural",
+      "name": "Predict Risk Neural",
+      "description": "predict_risk_neural via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "neural_insights",
+      "name": "Neural Insights",
+      "description": "neural_insights via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "quick_scan",
+      "name": "Quick Scan",
+      "description": "quick_scan via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "certification_timeline",
+      "name": "Certification Timeline",
+      "description": "certification_timeline via iso-42001-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

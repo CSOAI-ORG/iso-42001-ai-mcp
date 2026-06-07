@@ -1,0 +1,28 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "iso-42001-ai-mcp",
+    "description": "Iso 42001 Ai MCP Server by MEOK AI Labs",
+    "version": "1.1.4",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "iso-42001-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "audit_management_system",
+      "assess_ai_risk",
+      "generate_policy_template",
+      "check_annex_controls",
+      "crosswalk_to_eu_ai_act",
+      "create_certification_checklist",
+      "predict_risk_neural",
+      "neural_insights",
+      "quick_scan",
+      "certification_timeline"
+    ]
+  }
+}
