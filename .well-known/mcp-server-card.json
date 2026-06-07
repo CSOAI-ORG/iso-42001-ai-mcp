@@ -1,0 +1,43 @@
+{
+  "name": "iso-42001-ai-mcp",
+  "title": "Iso 42001 Ai Mcp",
+  "description": "AI-powered iso 42001 ai MCP server for agents. Supports audit management system, assess ai risk, generate policy template. By MEOK AI Labs.",
+  "version": "1.1.4",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "audit_management_system"
+    },
+    {
+      "name": "assess_ai_risk"
+    },
+    {
+      "name": "generate_policy_template"
+    },
+    {
+      "name": "check_annex_controls"
+    },
+    {
+      "name": "crosswalk_to_eu_ai_act"
+    },
+    {
+      "name": "create_certification_checklist"
+    },
+    {
+      "name": "predict_risk_neural"
+    },
+    {
+      "name": "neural_insights"
+    },
+    {
+      "name": "quick_scan"
+    },
+    {
+      "name": "certification_timeline"
+    }
+  ]
+}

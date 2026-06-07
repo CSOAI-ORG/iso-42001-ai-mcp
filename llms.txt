@@ -1,0 +1,26 @@
+# iso-42001-ai-mcp
+
+> AI-powered iso 42001 ai MCP server for agents. Supports audit management system, assess ai risk, generate policy template. By MEOK AI Labs.
+
+MCP server by MEOK AI Labs. Framework: fastmcp. Transport: stdio.
+
+## Tools
+- audit_management_system
+- assess_ai_risk
+- generate_policy_template
+- check_annex_controls
+- crosswalk_to_eu_ai_act
+- create_certification_checklist
+- predict_risk_neural
+- neural_insights
+- quick_scan
+- certification_timeline
+
+## Install
+```
+pip install iso-42001-ai-mcp
+```
+
+## Links
+- PyPI: https://pypi.org/project/iso-42001-ai-mcp/
+- Docs: https://meok.ai
