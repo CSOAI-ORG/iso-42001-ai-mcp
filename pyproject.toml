@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iso-42001-ai-mcp"
-version = "1.1.4"
+version = "1.1.9"
 readme = "README.md"
 description = "AI-powered iso 42001 ai MCP server for agents. Supports audit management system, assess ai risk, generate policy template. By MEOK AI Labs."
 license = {file = "LICENSE"}
