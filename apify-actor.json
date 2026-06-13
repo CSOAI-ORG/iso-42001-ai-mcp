@@ -1,0 +1,17 @@
+{
+  "name": "knowing_yucca/iso-42001-ai-mcp",
+  "title": "MEOK Iso 42001 Ai Mcp",
+  "description": "Compliance MCP server: iso-42001-ai-mcp",
+  "readme": "# MEOK Iso 42001 Ai Mcp\n\nCompliance MCP from MEOK AI.",
+  "categories": [
+    "AI",
+    "Compliance",
+    "Governance"
+  ],
+  "defaultRunInput": {
+    "tool": "quick_scan",
+    "arguments": {
+      "system": "example"
+    }
+  }
+}

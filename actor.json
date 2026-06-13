@@ -1,0 +1,10 @@
+{
+  "name": "knowing_yucca/iso-42001-ai-mcp",
+  "title": "MEOK Iso 42001 Ai Mcp",
+  "description": "Compliance MCP server",
+  "categories": [
+    "AI",
+    "Compliance"
+  ],
+  "isPublic": true
+}
