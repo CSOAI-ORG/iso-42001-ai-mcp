@@ -1,24 +1,15 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.CSOAI-ORG/iso-42001-ai-mcp",
-  "version": "1.1.9",
-  "description": "Iso 42001 Ai MCP Server by MEOK AI Labs",
-  "repository": {
-    "url": "https://github.com/CSOAI-ORG/iso-42001-ai-mcp",
-    "source": "github"
-  },
-  "packages": [
-    {
-      "registryType": "pypi",
-      "identifier": "iso-42001-ai-mcp",
-      "version": "1.1.9",
-      "runtimeHint": "python",
-      "transport": {
-        "type": "stdio"
-      }
-    }
-  ],
+  "name": "CSOAI-ORG/iso-42001-ai-mcp",
+  "title": "ISO 42001 Compliance",
+  "version": "1.3.4",
+  "description": "ISO/IEC 42001 AI management system compliance assessment. Part of the MEOK 28-hive MCP governance mesh. 13 unified frameworks + attestation chain.",
   "websiteUrl": "https://meok.ai/iso-42001-ai-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/iso-42001-ai-mcp",
+    "source": "https://github.com/CSOAI-ORG/iso-42001-ai-mcp"
+  },
   "icons": [
     {
       "src": "https://raw.githubusercontent.com/CSOAI-ORG/iso-42001-ai-mcp/main/assets/icon.svg",
@@ -29,6 +20,27 @@
       "theme": "dark"
     }
   ],
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "iso-42001-ai-mcp",
+      "version": "1.3.4",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "category": "ai-governance",
+      "subcategories": [
+        "compliance",
+        "audit"
+      ],
+      "tier": "flagship",
+      "openSsfScorecard": "7.06/10"
+    }
+  },
   "metadata": {
     "publisher": "MEOK AI Labs",
     "categories": [
@@ -59,5 +71,13 @@
       "name": "iso-42001-ai-mcp on GitHub",
       "mimeType": "text/html"
     }
+  ],
+  "publisher": {
+    "name": "CSOAI Ltd",
+    "url": "https://csoai.org"
+  },
+  "categories": [
+    "compliance",
+    "ai-governance"
   ]
 }
