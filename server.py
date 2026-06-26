@@ -46,7 +46,7 @@ except Exception:
 # ---------------------------------------------------------------------------
 
 
-FREE_DAILY_LIMIT = 10
+FREE_DAILY_LIMIT = 50
 _usage: dict[str, list[datetime]] = defaultdict(list)
 
 
@@ -2540,7 +2540,7 @@ def _server_meter_check(tool: str) -> dict:
 # ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
 # Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
