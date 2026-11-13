@@ -74,14 +74,11 @@ This MCP server is built with **EU AI Act compliance** built-in:
 
 Need help getting compliant? **[Book a free 15-min diagnostic →](mailto:nicholas@meok.ai?subject=Compliance%20diagnostic)**
 
-## 🏢 Enterprise
+## How MEOK charges
 
-Need custom development, SLA guarantees, or white-label deployment?
+MEOK has no subscriptions and no tiers. You pay per job, and only when the agreed artifact has been delivered to you. There is no public price list. See <https://meok.ai/pricing>.
 
-- **Pro:** £79/mo — Full MCP suite + EU AI Act tracking
-- **Enterprise:** £499/mo — Custom dev + SLA + Dedicated support
-
-[View Pricing →](https://councilof.ai/payg) | [Contact Sales →](mailto:sales@meok.ai)
+This repository's source is MIT-licensed and free to self-host.
 
 ## 🤝 Part of the MEOK Ecosystem
 
